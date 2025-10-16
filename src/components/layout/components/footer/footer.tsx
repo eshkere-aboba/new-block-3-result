@@ -1,6 +1,7 @@
 import { Container } from '@/components/container';
-import { Logo } from '@/components/logo';
-import { PhoneCallButton } from '@/components/phone-call-button';
+
+import { Logo } from '../logo';
+import { PhoneCallButton } from '../phone-call-button';
 
 import styles from './footer.module.scss';
 
@@ -11,7 +12,7 @@ export const Footer = () => {
         <div className={styles.content}>
           <div className={styles.wrapper}>
             <Logo />
-            <PhoneCallButton />
+            <PhoneCallButton isFromFooter />
           </div>
           <div className={styles.copyright}>© ROBO.SCHOOL</div>
         </div>
