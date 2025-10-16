@@ -1,13 +1,13 @@
-import type { PropsWithChildren } from 'react';
+import type { AnchorHTMLAttributes } from 'react';
 
 import styles from './link.module.scss';
 
-interface LinkProps extends PropsWithChildren {
+interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
   additionalClassname?: string;
 }
 
-export const Link = ({ href, children, additionalClassname }: LinkProps) => {
+export const Link = ({ href, children, additionalClassname, ...rest }: LinkProps) => {
   const createLinkClassname = () => {
     const baseClassname = `${styles.link}`;
 
@@ -19,7 +19,7 @@ export const Link = ({ href, children, additionalClassname }: LinkProps) => {
   };
 
   return (
-    <a href={href} className={createLinkClassname()}>
+    <a href={href} className={createLinkClassname()} {...rest}>
       {children}
     </a>
   );
