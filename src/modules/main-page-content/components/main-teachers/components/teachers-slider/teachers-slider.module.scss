@@ -1,0 +1,66 @@
+@use '@/styles/variables.scss' as *;
+
+.teachersSlider {
+  margin-top: 60px;
+
+  .slide {
+    width: max-content;
+  }
+}
+
+.sliderControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
+
+  .scrollbar {
+    width: 100%;
+    max-width: 360px;
+    height: 5px;
+    border-radius: 40px;
+    background: $controls-bg-tertiary;
+
+    :global(.swiper-scrollbar-drag) {
+      border-radius: 40px;
+      background: $controls-bg-secondary;
+      height: 5px;
+      transition: opacity 0.3s ease;
+      cursor: grab;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    gap: 15px;
+
+    .button {
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .teachersSlider {
+    margin-top: 40px;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding: 0 10px;
+  }
+
+  .sliderControls {
+    margin-top: 40px;
+
+    .scrollbar {
+      max-width: 100%;
+    }
+  }
+}
